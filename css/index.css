@@ -4,3 +4,35 @@
 .bg-body-tertiary .container .navbar-collapse {
   flex-grow: 0;
 }
+.summary {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  /* 视频背景样式 */
+}
+.summary .video-background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.welcome {
+  /* 文字内容样式 */
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+}
+.btn {
+  background-color: #787878;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #a1a1a1;
+}
