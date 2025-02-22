@@ -1,0 +1,2 @@
+# staticpage
+a static page
