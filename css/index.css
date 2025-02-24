@@ -1,13 +1,19 @@
 .bg-body-tertiary {
   background-color: transparent !important;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 .bg-body-tertiary .container .navbar-collapse {
   flex-grow: 0;
 }
-.navbar.scrolled {
+.bg-body-tertiary a {
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+.bg-body-tertiary.scrolled {
   background-color: black !important;
 }
-.navbar.scrolled a {
+.bg-body-tertiary.scrolled a {
   color: white !important;
 }
 .summary {
