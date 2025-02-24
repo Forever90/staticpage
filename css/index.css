@@ -4,35 +4,88 @@
 .bg-body-tertiary .container .navbar-collapse {
   flex-grow: 0;
 }
+.navbar.scrolled {
+  background-color: black !important;
+}
+.navbar.scrolled a {
+  color: white !important;
+}
 .summary {
   min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #ffffff;
+  transition: opacity 0.5s ease, transform 0.5s ease;
   /* 视频背景样式 */
+  /* 文字内容样式 */
 }
 .summary .video-background {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.welcome {
-  /* 文字内容样式 */
+.summary .welcome {
+  z-index: 1;
   color: #000000;
   text-align: center;
   padding: 20px;
 }
-.btn {
-  background-color: #787878;
-  color: #000000;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+/* 模块样式 */
+.module {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 20px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.btn:hover {
-  background-color: #a1a1a1;
+.module.active .expandable-content {
+  max-height: 500px;
+  /* 根据内容调整 */
+  opacity: 1;
+}
+.module.active .expandable-content img:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.module.active .expandable-content img:nth-child(2) {
+  animation-delay: 1.6s;
+}
+.module.active .expandable-content img:nth-child(3) {
+  animation-delay: 2.4s;
+}
+/* 抽屉式展开效果 */
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+/* 图片动画效果 */
+.expandable-content img {
+  width: 0;
+  height: 0;
+  object-fit: cover;
+  border-radius: 5px;
+  opacity: 0;
+  transform: scale(0);
+  animation: imageReveal 0.5s ease forwards;
+}
+@keyframes imageReveal {
+  to {
+    width: 200px;
+    height: 150px;
+    opacity: 1;
+    transform: scale(1);
+  }
 }
