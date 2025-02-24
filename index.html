@@ -19,16 +19,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">机构介绍</a>
+              <a class="nav-link active" aria-current="page" href="#home">首页</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#courses">课程介绍</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">师资力量</a>
+              <a class="nav-link" href="#about">师资力量</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">学员成果</a>
+              <a class="nav-link" href="#achievements">学员成果</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">联系我们</a>
@@ -53,6 +53,7 @@
       <div class="module" id="courses">
         <h1>课程介绍</h1>
         <p>我们提供数学、英语、物理等多门课程，涵盖小学、初中、高中各阶段。课程内容紧贴考试大纲，帮助学生全面提升成绩。</p>
+        <a id="achievements_detail">详情</a>
         <div class="expandable-content">
             <img src="https://img2.baidu.com/it/u=464833386,3754034670&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1428" alt="课程1">
             <img src="https://i0.hdslb.com/bfs/archive/5d5be57e7b6f0ffa4cafd736e31fbec499d6ed7d.jpg" alt="课程2">
@@ -209,10 +210,11 @@
     <script src="./third/js/bootstrap.min.js"></script>
     <script>
         // 课程介绍和学员成果的抽屉式展开效果
-        const expandableModules = document.querySelectorAll('#courses, #achievements');
-        expandableModules.forEach(module => {
+        const detailBtn = document.querySelectorAll('#achievements_detail');
+        detailBtn.forEach(module => {
             module.addEventListener('click', () => {
-                module.classList.toggle('active');
+                const expandableModule = document.querySelector('#courses');
+                expandableModule.classList.toggle('active');
             });
         });
 
