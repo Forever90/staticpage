@@ -96,9 +96,9 @@
   margin-bottom: 5px;
   align-items: center;
   justify-content: center;
-  color: #3d3d3d;
+  color: #ffffff;
   background-image: url("../resource/img/courseBg.jpeg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   padding-left: 10px;
   width: 0;
@@ -111,8 +111,15 @@
 @keyframes imageReveal {
   to {
     width: 200px;
-    height: 150px;
+    height: 120px;
     opacity: 1;
     transform: scale(1);
   }
+}
+.nav-pills {
+  --bs-nav-pills-link-active-color: #ffffff;
+  --bs-nav-pills-link-active-bg: #00731d;
+}
+.nav-link {
+  color: #000;
 }
